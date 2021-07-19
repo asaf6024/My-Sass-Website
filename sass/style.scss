@@ -1,0 +1,109 @@
+@import "config";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $light-color;
+  font-family: $font-stack;
+  line-height: 1.6;
+}
+img {
+  width: 100%;
+  border-radius: 0.25rem !important;
+}
+a {
+  text-decoration: none;
+}
+.active {
+  font-weight: bold;
+  color: $secondary-color !important;
+}
+.my-text {
+  padding-right: 50px;
+  a {
+    color: set-text-color($primary-color);
+    font-weight: bold;
+  }
+  span {
+    padding-left: 15px;
+  }
+  li {
+    padding: 10px 0;
+  }
+  a:hover {
+    color: $secondary-color;
+  }
+}
+.my-skills {
+  li {
+    padding: 10px 0;
+  }
+}
+img:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+.footer {
+  background-color: $secondary-color;
+  height: 200px;
+  p {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
+.showcase {
+  @include set-background($primary-color);
+  height: 600px;
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    ul {
+      display: flex;
+      list-style-type: none;
+    }
+    li {
+      padding: 15px;
+    }
+    a {
+      color: set-text-color($primary-color);
+    }
+    a:hover {
+      color: $secondary-color;
+    }
+  }
+
+  //
+  //הסימן & בעצם אומר שחלק מהשם הוא כמו שם האלמנט אב.
+  //במקרה זה שם האב הוא .showcase
+  //ושם הבן הוא .showcase-content
+  &-content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+
+    img {
+      width: inherit;
+      height: 500px;
+    }
+
+    h1 {
+      font-size: 50px;
+      line-height: 1.2;
+    }
+  }
+}
+@import "utilitis";
+@import "buttons";
+@import "mobile";
