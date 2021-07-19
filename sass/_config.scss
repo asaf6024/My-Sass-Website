@@ -1,0 +1,24 @@
+//variable
+$light-color: #f4f4f4;
+$font-stack: Arial, Helvetica, sans-serif;
+// $primary-color: #0e6cff;
+$primary-color: #2a4776;
+$secondary-color: #ff8700;
+
+//Set text color based on background
+//בעצם נגדיר כאן פונקציה עם התניה
+@function set-text-color($color) {
+  @if (lightness($color) > 70) {
+    @return #333;
+  } @else {
+    @return #fff;
+  }
+}
+
+//Set background & text-color
+//נשתמש כאן ב Mixin
+//מיקסין זה כמו פונקציה אבל לא מחזיר כלום
+@mixin set-background($color) {
+  background-color: $color;
+  color: set-text-color($color);
+}
